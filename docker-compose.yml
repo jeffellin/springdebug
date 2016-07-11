@@ -1,0 +1,11 @@
+demoapp:
+  build: .
+  volumes:
+    - .:/demo
+    - ~/.m2:/root/.m2
+  ports:
+    - 8080:8080
+    - 8000:8000
+  environment:
+    MVN_OPTS: "-Drun.jvmArguments=\"-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000\""
+
